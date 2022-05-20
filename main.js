@@ -104,11 +104,12 @@ function stampaPost(){
 stampaPost();
 
 
+const miPiace = document.querySelector(".like-button");
+miPiace.addEventListener("click",
+function () {
 
-
-function miPiace() {
-
+    miPiace.classList.add("like-button--liked")
     
-    
+
 }
-like-button.addEventListener("click", miPiace);
+)
