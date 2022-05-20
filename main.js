@@ -104,12 +104,15 @@ function stampaPost(){
 stampaPost();
 
 
-const miPiace = document.querySelector(".like-button");
-miPiace.addEventListener("click",
-function () {
+const miPiace = document.querySelectorAll(".like-button");
 
-    miPiace.classList.add("like-button--liked")
-    
-
-}
-)
+miPiace.forEach((button) => {
+    button.addEventListener("click",
+    function() {
+        let id = parseInt(button.getAttribute('data-postid')) - 1;
+        posts[id].likes++;
+        button.classList.add('like-button--liked');
+        const likeCounter = document.getElementById(`like-counter-${posts[id].id}`);
+        likeCounter.innerText = posts[id].likes++;
+    })
+});
